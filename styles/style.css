@@ -1,0 +1,187 @@
+/* Global Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+h2 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+}
+a {
+  text-decoration: none !important;
+}
+ol,
+ul {
+  padding: 0rem;
+}
+.row {
+  width: 80%;
+  margin: auto;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* Company Header */
+#company-title {
+  background: linear-gradient(
+    90deg,
+    rgba(29, 7, 119, 1) 0%,
+    rgba(14, 5, 51, 1) 100%
+  );
+
+  min-height: 10vh;
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+  font-family: cursive;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 50px;
+}
+#company-title img {
+  width: 60px;
+}
+/* Login Page */
+#login-section {
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+.login-box {
+  background-color: #0e0533;
+  width: 40%;
+  padding: 5rem;
+}
+.login-box img {
+  width: 30%;
+  margin: 30px;
+}
+
+.login-form input {
+  min-height: 3.5rem;
+  margin-bottom: 1rem;
+  padding: 15px;
+  font-size: 14px;
+}
+.login-form input::placeholder {
+  font-size: 14px;
+}
+
+.login-form input[type="button"] {
+  background-color: #533ab4;
+  border: none;
+  width: 100%;
+  padding: 10px;
+}
+#copyright {
+  color: white;
+  font-size: 14px;
+  padding-top: 30px;
+}
+/* Dashboards Global */
+#dashboard-container {
+  background-color: #f7f7f7;
+  height: 90vh;
+}
+.menu {
+  height: 90vh;
+  background: #fff;
+}
+.menu-wrapper {
+  width: 100% !important;
+}
+.menu-wrapper .col {
+  padding: 0;
+}
+
+.menu {
+  padding-top: 10%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu li {
+  list-style: none;
+  margin: 10px 0;
+}
+.menu button {
+  display: block;
+  width: 100%;
+  border: none;
+  margin-bottom: 1px;
+  background-color: transparent;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: left;
+  color: #0e0533;
+}
+.active {
+  background: #cfdfff !important;
+}
+
+.dasboard-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+}
+.dasboard-items div {
+  width: 25%;
+  height: 30%;
+  margin: 30px;
+}
+.content-panel div {
+  height: 30%;
+  margin: 30px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  border-radius: 10px;
+  box-shadow: -1px 1px 1px 1px white;
+  background: white;
+  border-left: 5px solid #0e0533;
+  max-height: 100px;
+}
+.item h2 {
+  font-size: 16px;
+  color: black;
+}
+.table-block {
+  width: 100%;
+  font-size: 16px;
+}
+
+.table-block th {
+  background-color: #071f39;
+  color: white;
+  padding: 10px;
+}
+
+.table-block td {
+  background-color: white;
+  padding: 10px;
+}
