@@ -42,66 +42,62 @@ include_once 'resources/header.php';
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                            <td>1</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                        
+                            <?php 
+                                include_once 'resources/header.php';
+                                
+                                   
+                                   $query2 = 'SELECT r.reg_id , c.name as cname , r.date as date , s.full_name as sname, c.grade as grade 
+                                   FROM class_registrations r 
+                                        join classes c
+                                            on r.c_id=c.c_id
+                                        join students s
+                                            on s.u_id=r.u_id
+                                   WHERE r.u_id = 2;';
+
+                                   $result = $conn->query($query2);
+
+                                   if (!$result) {
+                                        printf("Error: %s\n", mysqli_error($conn));
+                                        exit();
+                                    }
+
+                                    while($row = mysqli_fetch_array($result))
+                                    {
+                                   
+
+                                        echo "<tr>";
+                                        echo "<td>" . $row['reg_id'] . "</td>";
+                                        echo "<td>" . $row['date'] . "</td>";
+                                        echo "<td>" . $row['sname'] . "</td>";
+                                        echo "<td>" . $row['cname'] . "</td>";
+                                        echo "<td>" . $row['grade'] . "</td>";
+                                        echo "</tr>";
+                                
+                                    }
+                                
+                                
+                            ?>
                             
-                            </tr>
-                            <tr>
-                            <td>2</td>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>@mdo</td>
-                   
-                            </tr>
-                            <tr>
-                            <td>3</td>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                            <td>@mdo</td>
-                  
-                            </tr>
-                            <tr>
-                            <td>4</td>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                            <td>@mdo</td>
-                   
-                            </tr>
-                            <tr>
-                            <td>5</td>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                            <td>@mdo</td>
-                     
-                            <tr>
-                            <td>6</td>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                            <td>@mdo</td>
-             
-                
-                            <tr>
-                            <td>7</td>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                            <td>@mdo</td>
-                    
-                            </tr>
                         </tbody>
                     </table>
                 </div>
-            
+            <?php 
+                               /* include_once 'resources/header.php';
+                                $query1 = 'SELECT c_id FROM class_registrations;';
+                                $id = $conn->query($query1);
+                                $query2 = 'SELECT * FROM classes WHERE c_id=".$id.";';
+                                $result = $conn->query($query2);
+
+                                
+
+                                while($row = mysql_fetch_array($result))
+                                {
+                                    echo '<p>'.$row['column'].' </p>';
+                                }*/
+
+                                
+            ?>
+
 
 
 
