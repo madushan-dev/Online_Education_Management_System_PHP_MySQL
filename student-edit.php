@@ -2,6 +2,15 @@
 <?php 
 include_once 'resources/header.php';
 ?>
+<<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+
+
 <section id="company-title">
     <div>
         <img src="images/logo.jpeg" alt="">
@@ -22,93 +31,63 @@ include_once 'resources/header.php';
 
 
 
-            </div>
-
+    </div>
         </div>
-
-
-
-             <div class="col col-10 content-panel">
-            
+             <div class="col col-10 content-panel">            
                 <div>
-                    <table class="table table-block ">
-                        <thead>
-                            <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Date</th>
-                            <th scope="col">Student Name</th>
-                            <th scope="col">Class Name</th>
-                            <th scope="col">Grade</th>
-                            
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                            <td>1</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                        
-                            
-                            </tr>
-                            <tr>
-                            <td>2</td>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>@mdo</td>
-                   
-                            </tr>
-                            <tr>
-                            <td>3</td>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                            <td>@mdo</td>
-                  
-                            </tr>
-                            <tr>
-                            <td>4</td>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                            <td>@mdo</td>
-                   
-                            </tr>
-                            <tr>
-                            <td>5</td>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                            <td>@mdo</td>
-                     
-                            <tr>
-                            <td>6</td>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                            <td>@mdo</td>
-             
-                
-                            <tr>
-                            <td>7</td>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                            <td>@mdo</td>
-                    
-                            </tr>
-                        </tbody>
-                    </table>
+                   <div class="login-form" autocomplete="off">
+                        <form class="">
+
+                            <?php 
+                                include_once 'resources/header.php';
+                                
+                                   
+                                   $query = 'SELECT * 
+                                              FROM students
+                                              WHERE u_id = 2;';
+
+                                   $result = $conn->query($query);
+
+                                   if (!$result) {
+                                        printf("Error: %s\n", mysqli_error($conn));
+                                        exit();
+                                    }
+
+                                    while($row = mysqli_fetch_array($result)){
+                                    
+                                     echo    "<div class='form-group'>
+                                <h4>Full Name:</h4><input type='text' name='full_name' id='full_name' class='form-control' value=".$row['full_name'].">
+                            </div>
+                            <div class='form-group'>
+                                <h4>Email:</h4><input type='text' name='email' id='email' class='form-control' autocomplete='off'value=".$row['email'].">
+                            </div>
+                            <div class='form-group'>
+                                <h4>Birthday:</h4><input type='text' name='bod' id='bod' class='form-control' autocomplete='off' value=".$row['dob'].">
+                            </div>
+                            <div class='form-group'>
+                                <h4>Contact Number:</h4><input type='text' name='phone' id='phone' class='form-control' autocomplete='off' value=".$row['phone'].">
+                            </div>
+                            <div class='form-group'>
+                                <h4>Address:</h4><input type='text' name='address' id='address' class='form-control' autocomplete='off' value=".$row['address'].">
+                            </div>
+                            <div class='form-group'>
+                                <h4>Gender:</h4>
+                                <select id='gender' name='gender' class='form-control' selected=".$row['gender']."> 
+                                    <option value='male'>male</option>
+                                    <option value='female'>female</option>
+                                </select>
+                            </div>
+                            <input type='button' name='Update' id='update' class='btn btn-primary' value='Update'>
+                            <div id='result'></div>";
+
+                                    }
+                                    ?>
+                           
+                        </form>
+                    </div>
                 </div>
-            
-
-
-
-
-                </div>
-
-    
-
+        </div>
+    </div>
 </div>
+</body>
+</html>
